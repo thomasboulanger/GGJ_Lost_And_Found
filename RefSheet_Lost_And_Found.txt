@@ -1,0 +1,68 @@
+//////////////////////////
+SPEECH :		//
+//////////////////////////
+
+-Jeu en 2D vue dessus ou vous incarnez un cosmonaute a la derive dans l'espace apres l'explosion de son vaisseau.
+ Vous devez trouver la capsule de secours en suivant une suite d instructions, vous validerez un point atteint pour 
+ decouvrir le suivant jusqu'a la capsule.
+
+
+//////////////////////////
+DETAILS TECHNIQUES :	//
+//////////////////////////
+
+-Style graphique a definir mais surrement pixel
+-Son de freesound ou a crée entre nous
+-Police d ecriture a définir
+-Backgrounds des différents menu a définir/imagnier
+
+
+//////////////////////////
+TO DO LIST		//
+//////////////////////////
+DECORS
+
+-TILES :
+-BACKGROUND (ETOILES COMETES GALAXIES CANARD, TROU NOIR)
+-MIDDLEGROUND (MORCEAUX D EPAVES , CORPS ,ASTERIODES, MISSILE DRAPEAU RUSSE, ET PLUS...)
+-FOREGROUND (DECORS LEGER)
+
+PLAYER
+
+-SPRITE COSMONAUTE (ANIME C EST MIEU)
+-BIND DES TOUCHES (DIRECTIONS,POSER UNE BALISE UI OU EN JEU,TOUCHE ECHAP POUR MENU PAUSE,MONTER DANS LA CAPSULE)
+-POSER/RECUPERER UNE BALISE
+-MONTER DANS LA CAPSULE
+
+UI
+
+-MENU ACCEUIL
+-MENU OPTION
+-MENU PAUSE
+-LEVEL SELECTION MENU
+-UI IN GAME(PANNEAU DES OBJECTIFS PAR ETAPES)
+
+SCRPITS
+
+-PLAYER CONTROLLER
+-CAMERA CONTROLLER
+-BALISE SCRIPT ET VALIDER ETAPES 
+-OBJECTIFS (LIST)
+-MAIN MENU
+-OPTION MENU
+-PAUSE MENU
+-SELECT A LEVEL 
+-CAPSULE SCRIPT
+-INTRO IN GAME(A VOIR)
+
+PROPS
+
+-COSMONAUTES (PLAYER/CADAVRES)
+-PLANETES / LUNES
+-ETOILES 
+-GALAXIES
+-NEBULEUSES
+-ASTEROIDES
+-MORCEAUX DE VAISSEAU (PETIT/MOYEN/GRAND    ET PLUSIEURS DE CHAQUES)
+-DES PROPS RANDOMS (PELLE CANARD ETC..)
+-ET PLUS FAITES VOUS PLAISIR C EST VOTRE TAFF, NOUS ON SAIS PAS INVENTER A PART LES MATH :v
