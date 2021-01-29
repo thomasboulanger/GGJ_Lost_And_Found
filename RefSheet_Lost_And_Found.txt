@@ -14,7 +14,7 @@ DETAILS TECHNIQUES :	//
 -Style graphique a definir mais surrement pixel
 -Son de freesound ou a crée entre nous
 -Police d ecriture a définir
--Backgrounds des différents menu a définir/imagnier
+-Backgrounds des différents menu a définir/imaginer
 
 
 //////////////////////////
@@ -65,4 +65,4 @@ PROPS
 -ASTEROIDES
 -MORCEAUX DE VAISSEAU (PETIT/MOYEN/GRAND    ET PLUSIEURS DE CHAQUES)
 -DES PROPS RANDOMS (PELLE CANARD ETC..)
--ET PLUS FAITES VOUS PLAISIR C EST VOTRE TAFF, NOUS ON SAIS PAS INVENTER A PART LES MATH :v
+-ET PLUS FAITES VOUS PLAISIR, NOUS ON SAIS PAS INVENTER A PART LES MATH :v
