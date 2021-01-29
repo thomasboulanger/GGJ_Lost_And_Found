@@ -8,6 +8,11 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField]
     private AudioMixer audioMixer;
+
+    private void Start()
+    {
+        Cursor.visible = true;
+    }
     public void PlayLevel1()
     {
         SceneManager.LoadScene("GameLevel1");

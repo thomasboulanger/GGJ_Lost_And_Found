@@ -9,7 +9,6 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject pausePanel;
 
-    [SerializeField]
     private PlayerActions playerActions;
 
     private bool isPaused;
@@ -58,11 +57,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void BackToMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 }
