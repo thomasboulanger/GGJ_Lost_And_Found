@@ -25,21 +25,13 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 move = new Vector2(horizontal, vertical);
-
-        if (Mathf.Abs(horizontal) > 0 && Mathf.Abs(vertical) > 0)
+        if (horizontal != 0 && vertical != 0)
         {
-            move = .7f * move;  
+            move = .8f * move;  
         }
-
-        /*if (Mathf.Abs(horizontal) > 0 || Mathf.Abs(vertical) > 0)
-        {
-            
-        }*/
-
         rb.velocity = move * speed;
 
-        Debug.Log(rb.velocity);
-
+        //Debug.Log(rb.velocity);
         //rb.AddForce(move * speed * Time.deltaTime);
     }
 }
