@@ -47,7 +47,7 @@ public class PlayerActions : MonoBehaviour
         horizontal = movementInput.x;
         vertical = movementInput.y;
 
-        Debug.Log("horizontal : " + horizontal + " vertical : " + vertical);
+        
     }
 
     private void FixedUpdate()
@@ -57,6 +57,24 @@ public class PlayerActions : MonoBehaviour
 
     private void Movement(float delta)
     {
+        #region Controller Joystick Clamp
+        if (horizontal > 0.2f)
+            horizontal = 1f;
+        else if (horizontal < -0.2f)
+            horizontal = -1f;
+        else
+            horizontal = 0f;
+
+        if (vertical > 0.2f)
+            vertical = 1f;
+        else if (vertical < -0.2f)
+            vertical = -1f;
+        else
+            vertical = 0f;
+        #endregion
+
+        Debug.Log(horizontal + " " + vertical);
+
         Vector2 move = new Vector2(horizontal, vertical);
 
         if (horizontal != 0 && vertical != 0)
