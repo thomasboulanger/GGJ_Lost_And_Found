@@ -143,7 +143,7 @@
             "id": "78d2d3e4-08b2-4734-b0ae-8334693019eb",
             "actions": [
                 {
-                    "name": "Balise",
+                    "name": "Beacon",
                     "type": "Button",
                     "id": "7f9caad6-0a48-4ea7-b042-c48a4128bf60",
                     "expectedControlType": "Button",
@@ -167,7 +167,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Balise",
+                    "action": "Beacon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -178,7 +178,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Balise",
+                    "action": "Beacon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -201,6 +201,55 @@
                     "processors": "",
                     "groups": "",
                     "action": "Ship",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player Menu",
+            "id": "61f00337-afcf-432b-8a0e-55ebe5f7a4a8",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "b3c43ac9-5f79-47e1-9c38-957230f369e5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "48d0c3fb-81f1-42be-81b8-2bb355bdbb80",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f13b9b2a-8e7c-4237-a03f-d249ec83b716",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7008e00-6c29-4bb6-a3f8-7eff9eb6111b",
+                    "path": "<XInputController>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -156,7 +156,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""id"": ""78d2d3e4-08b2-4734-b0ae-8334693019eb"",
             ""actions"": [
                 {
-                    ""name"": ""Balise"",
+                    ""name"": ""Beacon"",
                     ""type"": ""Button"",
                     ""id"": ""7f9caad6-0a48-4ea7-b042-c48a4128bf60"",
                     ""expectedControlType"": ""Button"",
@@ -180,7 +180,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Balise"",
+                    ""action"": ""Beacon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -191,7 +191,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Balise"",
+                    ""action"": ""Beacon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -218,6 +218,55 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Player Menu"",
+            ""id"": ""61f00337-afcf-432b-8a0e-55ebe5f7a4a8"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""b3c43ac9-5f79-47e1-9c38-957230f369e5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""48d0c3fb-81f1-42be-81b8-2bb355bdbb80"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f13b9b2a-8e7c-4237-a03f-d249ec83b716"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7008e00-6c29-4bb6-a3f8-7eff9eb6111b"",
+                    ""path"": ""<XInputController>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -227,8 +276,11 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerMovement_Movement = m_PlayerMovement.FindAction("Movement", throwIfNotFound: true);
         // Player Actions
         m_PlayerActions = asset.FindActionMap("Player Actions", throwIfNotFound: true);
-        m_PlayerActions_Balise = m_PlayerActions.FindAction("Balise", throwIfNotFound: true);
+        m_PlayerActions_Beacon = m_PlayerActions.FindAction("Beacon", throwIfNotFound: true);
         m_PlayerActions_Ship = m_PlayerActions.FindAction("Ship", throwIfNotFound: true);
+        // Player Menu
+        m_PlayerMenu = asset.FindActionMap("Player Menu", throwIfNotFound: true);
+        m_PlayerMenu_Pause = m_PlayerMenu.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -311,13 +363,13 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     // Player Actions
     private readonly InputActionMap m_PlayerActions;
     private IPlayerActionsActions m_PlayerActionsActionsCallbackInterface;
-    private readonly InputAction m_PlayerActions_Balise;
+    private readonly InputAction m_PlayerActions_Beacon;
     private readonly InputAction m_PlayerActions_Ship;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Balise => m_Wrapper.m_PlayerActions_Balise;
+        public InputAction @Beacon => m_Wrapper.m_PlayerActions_Beacon;
         public InputAction @Ship => m_Wrapper.m_PlayerActions_Ship;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
@@ -328,9 +380,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_PlayerActionsActionsCallbackInterface != null)
             {
-                @Balise.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBalise;
-                @Balise.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBalise;
-                @Balise.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBalise;
+                @Beacon.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBeacon;
+                @Beacon.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBeacon;
+                @Beacon.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBeacon;
                 @Ship.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnShip;
                 @Ship.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnShip;
                 @Ship.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnShip;
@@ -338,9 +390,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Balise.started += instance.OnBalise;
-                @Balise.performed += instance.OnBalise;
-                @Balise.canceled += instance.OnBalise;
+                @Beacon.started += instance.OnBeacon;
+                @Beacon.performed += instance.OnBeacon;
+                @Beacon.canceled += instance.OnBeacon;
                 @Ship.started += instance.OnShip;
                 @Ship.performed += instance.OnShip;
                 @Ship.canceled += instance.OnShip;
@@ -348,13 +400,50 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public PlayerActionsActions @PlayerActions => new PlayerActionsActions(this);
+
+    // Player Menu
+    private readonly InputActionMap m_PlayerMenu;
+    private IPlayerMenuActions m_PlayerMenuActionsCallbackInterface;
+    private readonly InputAction m_PlayerMenu_Pause;
+    public struct PlayerMenuActions
+    {
+        private @PlayerControls m_Wrapper;
+        public PlayerMenuActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pause => m_Wrapper.m_PlayerMenu_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerMenu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayerMenuActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerMenuActions instance)
+        {
+            if (m_Wrapper.m_PlayerMenuActionsCallbackInterface != null)
+            {
+                @Pause.started -= m_Wrapper.m_PlayerMenuActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerMenuActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerMenuActionsCallbackInterface.OnPause;
+            }
+            m_Wrapper.m_PlayerMenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+            }
+        }
+    }
+    public PlayerMenuActions @PlayerMenu => new PlayerMenuActions(this);
     public interface IPlayerMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
     }
     public interface IPlayerActionsActions
     {
-        void OnBalise(InputAction.CallbackContext context);
+        void OnBeacon(InputAction.CallbackContext context);
         void OnShip(InputAction.CallbackContext context);
+    }
+    public interface IPlayerMenuActions
+    {
+        void OnPause(InputAction.CallbackContext context);
     }
 }

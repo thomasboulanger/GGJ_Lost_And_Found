@@ -6,7 +6,7 @@ public class PlayerActions : MonoBehaviour
 {
     PlayerControls inputActions;
 
-    private bool balise_Input, ship_Input;
+    public bool beacon_Input, ship_Input, escape_Input;
 
     Vector2 movementInput;
 
@@ -17,6 +17,14 @@ public class PlayerActions : MonoBehaviour
 
     private float horizontal, vertical;
 
+    [SerializeField]
+    private GameObject beacon;
+
+    [SerializeField]
+    private float distanceBeacon = 5f;
+
+    List<GameObject> beaconsList = new List<GameObject>();
+
     public void OnEnable()
     {
         if (inputActions == null)
@@ -25,8 +33,10 @@ public class PlayerActions : MonoBehaviour
 
             inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
 
-            inputActions.PlayerActions.Balise.performed += i => balise_Input = true;
+            inputActions.PlayerActions.Beacon.performed += i => beacon_Input = true;
             inputActions.PlayerActions.Ship.performed += i => ship_Input = true;
+
+            inputActions.PlayerMenu.Pause.performed += i => escape_Input = true;
         }
 
         inputActions.Enable();
@@ -47,12 +57,19 @@ public class PlayerActions : MonoBehaviour
         horizontal = movementInput.x;
         vertical = movementInput.y;
 
-        
+        BeaconManager();
     }
 
     private void FixedUpdate()
     {
         Movement(Time.deltaTime);
+    }
+
+    private void LateUpdate()
+    {
+        beacon_Input = false;
+        ship_Input = false;
+        escape_Input = false;
     }
 
     private void Movement(float delta)
@@ -73,8 +90,6 @@ public class PlayerActions : MonoBehaviour
             vertical = 0f;
         #endregion
 
-        Debug.Log(horizontal + " " + vertical);
-
         Vector2 move = new Vector2(horizontal, vertical);
 
         if (horizontal != 0 && vertical != 0)
@@ -83,5 +98,37 @@ public class PlayerActions : MonoBehaviour
         }
 
         rb.velocity = move * speed;
+    }
+
+    private void BeaconManager()
+    {
+        bool spawnableBeacon = true;
+
+        if (beaconsList.Count > 0)
+        {
+            foreach(GameObject oneBeacon in beaconsList)
+            {
+                if (oneBeacon != null)
+                {
+                    float distance = Vector2.Distance(transform.position, oneBeacon.transform.position);
+
+                    if (distance < distanceBeacon)
+                    {
+                        spawnableBeacon = false;
+
+                        if (beacon_Input)
+                            Destroy(oneBeacon);
+                    }
+                }
+            }
+
+            if (beacon_Input && spawnableBeacon)
+                beaconsList.Add(Instantiate(beacon, transform.position, Quaternion.identity));
+        }
+        else
+        {
+            if (beacon_Input)
+                beaconsList.Add(Instantiate(beacon, transform.position, Quaternion.identity));
+        }
     }
 }
