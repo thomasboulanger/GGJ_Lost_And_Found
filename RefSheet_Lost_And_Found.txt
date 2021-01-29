@@ -66,3 +66,22 @@ PROPS
 -MORCEAUX DE VAISSEAU (PETIT/MOYEN/GRAND    ET PLUSIEURS DE CHAQUES)
 -DES PROPS RANDOMS (PELLE CANARD ETC..)
 -ET PLUS FAITES VOUS PLAISIR, NOUS ON SAIS PAS INVENTER A PART LES MATH :v
+
+
+
+
+TO CREDIT : 
+
+###############################################################################
+
+	UI pack: Space extension by Kenney Vleugels (www.kenney.nl)
+
+			------------------------------
+
+			        License (CC0)
+	       http://creativecommons.org/publicdomain/zero/1.0/
+
+	You may use these graphics in personal and commercial projects.
+	Credit (Kenney or www.kenney.nl) would be nice but is not mandatory.
+
+###############################################################################
