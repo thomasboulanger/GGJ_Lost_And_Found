@@ -197,31 +197,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8330904245611179767, guid: acaae15641c11b64cae1acf9aa558ae4,
-        type: 3}
-      propertyPath: m_RefResolutionX
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: -8330904245611179767, guid: acaae15641c11b64cae1acf9aa558ae4,
-        type: 3}
-      propertyPath: m_RefResolutionY
-      value: 1080
-      objectReference: {fileID: 0}
     - target: {fileID: 1694001686374060885, guid: acaae15641c11b64cae1acf9aa558ae4,
         type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1567699578}
-    - target: {fileID: 1694001686374060885, guid: acaae15641c11b64cae1acf9aa558ae4,
-        type: 3}
-      propertyPath: offset.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1694001686374060885, guid: acaae15641c11b64cae1acf9aa558ae4,
-        type: 3}
-      propertyPath: translateSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1694001686374060887, guid: acaae15641c11b64cae1acf9aa558ae4,
         type: 3}
       propertyPath: m_Name

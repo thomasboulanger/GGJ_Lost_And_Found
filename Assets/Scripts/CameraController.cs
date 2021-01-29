@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] 
     private Transform target;
+
     [SerializeField] 
     private float translateSpeed;
+
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     private void FixedUpdate()
     {
