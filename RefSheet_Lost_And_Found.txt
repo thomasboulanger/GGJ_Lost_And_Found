@@ -11,7 +11,7 @@ SPEECH :		//
 DETAILS TECHNIQUES :	//
 //////////////////////////
 
--Style graphique a definir mais surrement pixel		XX
+-Style graphique a definir mais surrement pixel		OK
 -Son de freesound ou a crée entre nous			XX
 -Police d ecriture a définir				OK
 -Backgrounds des différents menu a définir/imaginer	XX
@@ -73,8 +73,6 @@ PROPS
 
 TO CREDIT : 
 
-###############################################################################
-
 	UI pack: Space extension by Kenney Vleugels (www.kenney.nl)
 
 			------------------------------
@@ -85,4 +83,13 @@ TO CREDIT :
 	You may use these graphics in personal and commercial projects.
 	Credit (Kenney or www.kenney.nl) would be nice but is not mandatory.
 
-###############################################################################
+
+
+Artwork created by Polovinkin (@vectorpixelstar)
+You can use this work on your personal or commercial projects, no credit required. Just don't redistribute the assets.
+
+Thank you for support! 
+Buy a Coffee for VECTORPIXELSTAR - https://ko-fi.com/vectorpixelstar
+
+https://vectorpixelstar.itch.io/
+Twitter @vectorpixelstar
