@@ -6,6 +6,8 @@ public class PlayerActions : MonoBehaviour
 {
     PlayerControls inputActions;
 
+    StepsSystem stepsSystem;
+
     public bool beacon_Input, ship_Input, escape_Input;
 
     Vector2 movementInput;
@@ -25,7 +27,7 @@ public class PlayerActions : MonoBehaviour
 
     List<GameObject> beaconsList = new List<GameObject>();
 
-    public void OnEnable()
+    private void OnEnable()
     {
         if (inputActions == null)
         {
@@ -50,6 +52,8 @@ public class PlayerActions : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+
+        stepsSystem = GetComponent<StepsSystem>();
     }
 
     private void Update()
@@ -62,7 +66,7 @@ public class PlayerActions : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Movement(Time.deltaTime);
+        Movement();
     }
 
     private void LateUpdate()
@@ -72,7 +76,7 @@ public class PlayerActions : MonoBehaviour
         escape_Input = false;
     }
 
-    private void Movement(float delta)
+    private void Movement()
     {
         #region Controller Joystick Clamp
         if (horizontal > 0.2f)
@@ -100,35 +104,47 @@ public class PlayerActions : MonoBehaviour
         rb.velocity = move * speed;
     }
 
+    private int index = 2;
+
     private void BeaconManager()
     {
         bool spawnableBeacon = true;
+
+        if (beaconsList.Count == stepsSystem.nbSteps)
+            spawnableBeacon = false;
 
         if (beaconsList.Count > 0)
         {
             foreach(GameObject oneBeacon in beaconsList)
             {
-                if (oneBeacon != null)
+                float distance = Vector2.Distance(transform.position, oneBeacon.transform.position);
+
+                if (distance < distanceBeacon)
                 {
-                    float distance = Vector2.Distance(transform.position, oneBeacon.transform.position);
+                    spawnableBeacon = false;
 
-                    if (distance < distanceBeacon)
+                    if (beacon_Input && oneBeacon == beaconsList[beaconsList.Count - 1])
                     {
-                        spawnableBeacon = false;
+                        Destroy(oneBeacon);
+                        beaconsList.Remove(oneBeacon);
 
-                        if (beacon_Input)
-                            Destroy(oneBeacon);
-                    }
+                        index = stepsSystem.RemoveStep(index);
+                    }  
                 }
             }
 
             if (beacon_Input && spawnableBeacon)
+            {
                 beaconsList.Add(Instantiate(beacon, transform.position, Quaternion.identity));
+
+                index = stepsSystem.AddStep(index);
+            }   
         }
-        else
+        else if (beacon_Input)
         {
-            if (beacon_Input)
-                beaconsList.Add(Instantiate(beacon, transform.position, Quaternion.identity));
+            beaconsList.Add(Instantiate(beacon, transform.position, Quaternion.identity));
+
+            index = stepsSystem.AddStep(1);
         }
     }
 }
