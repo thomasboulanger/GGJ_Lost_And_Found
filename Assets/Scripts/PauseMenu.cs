@@ -34,11 +34,13 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         pausePanel.SetActive(true);
+        isPaused = true;
     }
 
     public void Resume()
     {
         pausePanel.SetActive(false);
+        isPaused = false;
     }
     public void Restart()
     {
