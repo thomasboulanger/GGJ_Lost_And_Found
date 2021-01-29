@@ -1,0 +1,39 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+
+public class MainMenu : MonoBehaviour
+{
+    [SerializeField]
+    private AudioMixer audioMixer;
+    public void PlayLevel1()
+    {
+        SceneManager.LoadScene("GameLevel1");
+    }
+    public void PlayLevel2()
+    {
+        SceneManager.LoadScene("GameLevel2");
+    }
+    public void PlayLevel3()
+    {
+        SceneManager.LoadScene("GameLevel3");
+    }
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
+    public void SetMusicVolume(float volume)
+    {
+        audioMixer.SetFloat("MusicVolume", volume);
+    }
+    public void SetFXVolume(float volume)
+    {
+        audioMixer.SetFloat("FXVolume", volume);
+    }
+    public void SetFullscreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+    }
+}
