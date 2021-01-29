@@ -18,7 +18,8 @@ public class CameraController : MonoBehaviour
 
     private void HandleTranslation()
     {
-        Vector2 targetPosition = target.TransformPoint(offset);
-        transform.position = Vector2.Lerp(transform.position, targetPosition, translateSpeed * Time.deltaTime);
+        //Vector2 targetPosition = target.TransformPoint(offset);
+        transform.position = Vector2.Lerp(transform.position, /*targetPosition*/ new Vector3(target.position.x, target.position.y, transform.position.z
+            ), translateSpeed * Time.deltaTime);
     }
 }

@@ -26,12 +26,19 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 move = new Vector2(horizontal, vertical);
 
-        if (Mathf.Abs(horizontal) > 0 || Mathf.Abs(vertical) > 0)
+        if (Mathf.Abs(horizontal) > 0 && Mathf.Abs(vertical) > 0)
         {
-            move = .7f * move;
-
-            rb.velocity = move * speed;
+            move = .7f * move;  
         }
+
+        /*if (Mathf.Abs(horizontal) > 0 || Mathf.Abs(vertical) > 0)
+        {
+            
+        }*/
+
+        rb.velocity = move * speed;
+
+        Debug.Log(rb.velocity);
 
         //rb.AddForce(move * speed * Time.deltaTime);
     }
