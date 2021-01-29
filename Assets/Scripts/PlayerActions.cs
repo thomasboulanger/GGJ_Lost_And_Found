@@ -27,6 +27,9 @@ public class PlayerActions : MonoBehaviour
 
     List<GameObject> beaconsList = new List<GameObject>();
 
+    [SerializeField]
+    private Animator animator;
+
     private void OnEnable()
     {
         if (inputActions == null)
@@ -61,6 +64,17 @@ public class PlayerActions : MonoBehaviour
         horizontal = movementInput.x;
         vertical = movementInput.y;
 
+        animator.SetFloat("horizontal",horizontal);
+        animator.SetFloat("vertical", vertical);
+
+        if (horizontal > 0)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.x, 0f, transform.rotation.z);
+        }
+        if (horizontal < 0)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.x, 180f, transform.rotation.z);
+        }
         BeaconManager();
     }
 
