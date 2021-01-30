@@ -547,6 +547,11 @@ PrefabInstance:
       propertyPath: EmergencyPod
       value: 
       objectReference: {fileID: 1082000324}
+    - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
+        type: 3}
+      propertyPath: textStr.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6102190356122703286, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: m_RootOrder
