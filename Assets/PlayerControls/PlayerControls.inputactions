@@ -149,14 +149,6 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
-                },
-                {
-                    "name": "Ship",
-                    "type": "Button",
-                    "id": "207a788f-e29e-4f72-b545-d1da351a3baf",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -179,28 +171,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Beacon",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1cfe850c-7e71-455d-864d-23304fce2f6f",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Ship",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "47f479e9-539f-48b9-8f40-bb456aea28cb",
-                    "path": "<XInputController>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Ship",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

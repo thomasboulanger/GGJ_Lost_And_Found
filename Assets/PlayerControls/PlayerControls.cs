@@ -162,14 +162,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
-                },
-                {
-                    ""name"": ""Ship"",
-                    ""type"": ""Button"",
-                    ""id"": ""207a788f-e29e-4f72-b545-d1da351a3baf"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -192,28 +184,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Beacon"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1cfe850c-7e71-455d-864d-23304fce2f6f"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Ship"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""47f479e9-539f-48b9-8f40-bb456aea28cb"",
-                    ""path"": ""<XInputController>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Ship"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -277,7 +247,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // Player Actions
         m_PlayerActions = asset.FindActionMap("Player Actions", throwIfNotFound: true);
         m_PlayerActions_Beacon = m_PlayerActions.FindAction("Beacon", throwIfNotFound: true);
-        m_PlayerActions_Ship = m_PlayerActions.FindAction("Ship", throwIfNotFound: true);
         // Player Menu
         m_PlayerMenu = asset.FindActionMap("Player Menu", throwIfNotFound: true);
         m_PlayerMenu_Pause = m_PlayerMenu.FindAction("Pause", throwIfNotFound: true);
@@ -364,13 +333,11 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_PlayerActions;
     private IPlayerActionsActions m_PlayerActionsActionsCallbackInterface;
     private readonly InputAction m_PlayerActions_Beacon;
-    private readonly InputAction m_PlayerActions_Ship;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Beacon => m_Wrapper.m_PlayerActions_Beacon;
-        public InputAction @Ship => m_Wrapper.m_PlayerActions_Ship;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -383,9 +350,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Beacon.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBeacon;
                 @Beacon.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBeacon;
                 @Beacon.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBeacon;
-                @Ship.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnShip;
-                @Ship.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnShip;
-                @Ship.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnShip;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -393,9 +357,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Beacon.started += instance.OnBeacon;
                 @Beacon.performed += instance.OnBeacon;
                 @Beacon.canceled += instance.OnBeacon;
-                @Ship.started += instance.OnShip;
-                @Ship.performed += instance.OnShip;
-                @Ship.canceled += instance.OnShip;
             }
         }
     }
@@ -440,7 +401,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IPlayerActionsActions
     {
         void OnBeacon(InputAction.CallbackContext context);
-        void OnShip(InputAction.CallbackContext context);
     }
     public interface IPlayerMenuActions
     {

@@ -11,6 +11,9 @@ public class StepsSystem : MonoBehaviour
 
     private static string hiddenText = "???";
 
+    [SerializeField]
+    private List<string> textStr = new List<string>();
+
     public int AddStep(int index)
     {
         if (index > nbSteps)
@@ -19,12 +22,13 @@ public class StepsSystem : MonoBehaviour
         if (index != nbSteps)
         {
             GameObject.Find("GreenDot_" + index).GetComponent<Image>().enabled = true;
-            GameObject.Find("TextGoal_" + ++index).GetComponent<TMP_Text>().text = "lala";
+            GameObject.Find("TextGoal_" + ++index).GetComponent<TMP_Text>().text = textStr[index - 2];
         }
         else
         {
             EmergencyPod();
         }
+
         return index;
     }
 

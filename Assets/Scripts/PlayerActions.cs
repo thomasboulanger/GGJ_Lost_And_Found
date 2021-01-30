@@ -9,7 +9,7 @@ public class PlayerActions : MonoBehaviour
     StepsSystem stepsSystem;
 
     [HideInInspector]
-    public bool beacon_Input, ship_Input, escape_Input;
+    public bool beacon_Input, escape_Input;
 
     Vector2 movementInput;
 
@@ -41,7 +41,6 @@ public class PlayerActions : MonoBehaviour
             inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
 
             inputActions.PlayerActions.Beacon.performed += i => beacon_Input = true;
-            inputActions.PlayerActions.Ship.performed += i => ship_Input = true;
 
             inputActions.PlayerMenu.Pause.performed += i => escape_Input = true;
         }
@@ -63,21 +62,13 @@ public class PlayerActions : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(stepsSystem.nbSteps + " / " + beaconsList.Count);
         horizontal = movementInput.x;
         vertical = movementInput.y;
 
-        animator.SetFloat("horizontal",horizontal);
+        animator.SetFloat("horizontal", horizontal);
         animator.SetFloat("vertical", vertical);
 
-        if (horizontal > 0)
-        {
-            transform.rotation = Quaternion.Euler(transform.rotation.x, 0f, transform.rotation.z);
-        }
-        if (horizontal < 0)
-        {
-            transform.rotation = Quaternion.Euler(transform.rotation.x, 180f, transform.rotation.z);
-        }
+        Rotation();
 
         BeaconManager();
     }
@@ -90,8 +81,20 @@ public class PlayerActions : MonoBehaviour
     private void LateUpdate()
     {
         beacon_Input = false;
-        ship_Input = false;
         escape_Input = false;
+    }
+
+    private void Rotation()
+    {
+        if (horizontal > 0)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.x, 0f, transform.rotation.z);
+        }
+
+        if (horizontal < 0)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.x, 180f, transform.rotation.z);
+        }
     }
 
     private void Movement()
