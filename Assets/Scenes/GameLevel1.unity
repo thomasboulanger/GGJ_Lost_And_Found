@@ -128,6 +128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1207181786, guid: 7208a101d9095ce4f8626ed330d5ded9, type: 3}
+      propertyPath: distanceBeacon
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2143457789, guid: 7208a101d9095ce4f8626ed330d5ded9, type: 3}
       propertyPath: fadeScreen
       value: 
@@ -136,6 +140,56 @@ PrefabInstance:
       propertyPath: EmergencyPod
       value: 
       objectReference: {fileID: 2053673250}
+    - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
+        type: 3}
+      propertyPath: textStr.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
+        type: 3}
+      propertyPath: textStr.Array.data[0]
+      value: drg
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
+        type: 3}
+      propertyPath: textStr.Array.data[1]
+      value: dr
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
+        type: 3}
+      propertyPath: textStr.Array.data[2]
+      value: gd
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
+        type: 3}
+      propertyPath: textStr.Array.data[3]
+      value: r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
+        type: 3}
+      propertyPath: textStr.Array.data[4]
+      value: d
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
+        type: 3}
+      propertyPath: textStr.Array.data[5]
+      value: r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
+        type: 3}
+      propertyPath: textStr.Array.data[6]
+      value: db
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
+        type: 3}
+      propertyPath: textStr.Array.data[7]
+      value: ebr
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
+        type: 3}
+      propertyPath: textStr.Array.data[8]
+      value: '''t'
+      objectReference: {fileID: 0}
     - target: {fileID: 6102190356122703286, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: m_RootOrder
@@ -718,6 +772,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4628800073923595607, guid: 6830e01d1ddac4a40b84990e3c57bcab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4628800075264485154, guid: 6830e01d1ddac4a40b84990e3c57bcab,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1063,6 +1122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EmergencyPod
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890642781108113126, guid: 9299725f30f4afb48a3458eafcb2f9df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7890642781108113127, guid: 9299725f30f4afb48a3458eafcb2f9df,
         type: 3}

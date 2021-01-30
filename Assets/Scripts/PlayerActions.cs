@@ -32,6 +32,8 @@ public class PlayerActions : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+
+    public Vector3 lastPlayerPos;
     private void OnEnable()
     {
         if (inputActions == null)

@@ -12,6 +12,7 @@ public class ScrollUV : MonoBehaviour
     private void Start()
     {
         playerActions = FindObjectOfType<PlayerActions>();
+        playerActions.lastPlayerPos = playerActions.transform.position;
     }
 
     private void Update()
@@ -22,15 +23,21 @@ public class ScrollUV : MonoBehaviour
 
         Vector2 offset = mat.mainTextureOffset;
 
-        if(playerActions.horizontal > 0.1f)
-            offset.x += bgSpeed; 
-        else if (playerActions.horizontal < - 0.1f)
-            offset.x -= bgSpeed;
+        if (playerActions.transform.position != playerActions.lastPlayerPos)
+        {
+            if (playerActions.horizontal > 0.1f)
+                offset.x += bgSpeed;
+            else if (playerActions.horizontal < -0.1f)
+                offset.x -= bgSpeed;
 
-        if (playerActions.vertical > 0.1f)
-            offset.y += bgSpeed;
-        else if (playerActions.vertical < - 0.1f)
-            offset.y -= bgSpeed;
+            if (playerActions.vertical > 0.1f)
+                offset.y += bgSpeed;
+            else if (playerActions.vertical < -0.1f)
+                offset.y -= bgSpeed;
+
+             playerActions.lastPlayerPos = playerActions.transform.position;
+        }
+        
 
         mat.mainTextureOffset = offset;
     }
