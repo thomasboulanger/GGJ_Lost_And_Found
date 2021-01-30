@@ -70,15 +70,15 @@ public class PlayerActions : MonoBehaviour
         animator.SetFloat("vertical", vertical);
         animator.SetBool("isMoving", isMoving);
 
-        if ((horizontal != 0f || vertical != 0f) && transform.position != ScrollUV.singleton.lastPlayerPos)
+        /*if ((horizontal != 0f || vertical != 0f) && transform.position != ScrollUV.singleton.lastPlayerPos)
         {
             isMoving = true;
         }
         else
         {
             isMoving = false;
-        }
-
+        }*/
+       
         Rotation();
 
         BeaconManager();
