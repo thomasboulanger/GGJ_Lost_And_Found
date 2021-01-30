@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmergencyPod
       objectReference: {fileID: 0}
+    - target: {fileID: 7890642781108113126, guid: 9299725f30f4afb48a3458eafcb2f9df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7890642781108113127, guid: 9299725f30f4afb48a3458eafcb2f9df,
         type: 3}
       propertyPath: m_RootOrder
@@ -209,6 +214,11 @@ PrefabInstance:
       objectReference: {fileID: 1479298729}
     - target: {fileID: 2143457789, guid: 7208a101d9095ce4f8626ed330d5ded9, type: 3}
       propertyPath: EmergencyPod
+      value: 
+      objectReference: {fileID: 116852667}
+    - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
+        type: 3}
+      propertyPath: emergencyPod
       value: 
       objectReference: {fileID: 116852667}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
