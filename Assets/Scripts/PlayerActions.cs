@@ -11,7 +11,7 @@ public class PlayerActions : MonoBehaviour
     [HideInInspector]
     public bool beacon_Input, escape_Input;
 
-    private Vector2 movementInput;
+    Vector2 movementInput;
 
     private Rigidbody2D rb;
 
@@ -32,8 +32,8 @@ public class PlayerActions : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
-    [HideInInspector]
-    public Vector3 lastPlayerPos;
+
+    private bool isMoving = false;
 
     private void OnEnable()
     {
@@ -59,7 +59,6 @@ public class PlayerActions : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-
         stepsSystem = GetComponent<StepsSystem>();
     }
 
@@ -68,8 +67,22 @@ public class PlayerActions : MonoBehaviour
         horizontal = movementInput.x;
         vertical = movementInput.y;
 
+        
+
         animator.SetFloat("horizontal", horizontal);
-        animator.SetFloat("vertical", vertical); 
+        animator.SetFloat("vertical", vertical);
+        animator.SetBool("isMoving", isMoving);
+
+        if ((horizontal != 0f || vertical != 0f) && transform.position != ScrollUV.singleton.lastPlayerPos)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+
+        
 
         Rotation();
 
