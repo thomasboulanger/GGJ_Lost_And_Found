@@ -32,8 +32,9 @@ public class PlayerActions : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
-
+    [HideInInspector]
     public Vector3 lastPlayerPos;
+
     private void OnEnable()
     {
         if (inputActions == null)
@@ -67,8 +68,22 @@ public class PlayerActions : MonoBehaviour
         horizontal = movementInput.x;
         vertical = movementInput.y;
 
-        animator.SetFloat("horizontal", horizontal);
-        animator.SetFloat("vertical", vertical);
+        if (transform.position == lastPlayerPos)
+        {
+            animator.SetFloat("horizontal", 0f);
+            animator.SetFloat("vertical", 0f);
+
+            //lastPlayerPos = transform.position;
+        }
+        else
+        {
+            animator.SetFloat("horizontal", horizontal);
+            animator.SetFloat("vertical", vertical);
+            
+            //lastPlayerPos = transform.position;
+        }
+
+        
 
         Rotation();
 

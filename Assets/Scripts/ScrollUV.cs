@@ -9,6 +9,8 @@ public class ScrollUV : MonoBehaviour
     [SerializeField]
     private float bgSpeed = 0.0001f;
 
+    
+
     private void Start()
     {
         playerActions = FindObjectOfType<PlayerActions>();
@@ -35,7 +37,7 @@ public class ScrollUV : MonoBehaviour
             else if (playerActions.vertical < -0.1f)
                 offset.y -= bgSpeed;
 
-             playerActions.lastPlayerPos = playerActions.transform.position;
+            playerActions.lastPlayerPos = playerActions.transform.position;
         }
         
 
