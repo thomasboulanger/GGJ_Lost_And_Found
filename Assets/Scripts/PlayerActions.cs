@@ -11,7 +11,7 @@ public class PlayerActions : MonoBehaviour
     [HideInInspector]
     public bool beacon_Input, escape_Input;
 
-    Vector2 movementInput;
+    private Vector2 movementInput;
 
     private Rigidbody2D rb;
 
@@ -68,22 +68,8 @@ public class PlayerActions : MonoBehaviour
         horizontal = movementInput.x;
         vertical = movementInput.y;
 
-        if (transform.position == lastPlayerPos)
-        {
-            animator.SetFloat("horizontal", 0f);
-            animator.SetFloat("vertical", 0f);
-
-            //lastPlayerPos = transform.position;
-        }
-        else
-        {
-            animator.SetFloat("horizontal", horizontal);
-            animator.SetFloat("vertical", vertical);
-            
-            //lastPlayerPos = transform.position;
-        }
-
-        
+        animator.SetFloat("horizontal", horizontal);
+        animator.SetFloat("vertical", vertical); 
 
         Rotation();
 

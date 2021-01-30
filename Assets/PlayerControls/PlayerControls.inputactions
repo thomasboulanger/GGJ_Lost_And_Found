@@ -12,6 +12,14 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Mouse Movement",
+                    "type": "PassThrough",
+                    "id": "56156552-d933-48b0-8cc9-795e52cb5f3d",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -133,6 +141,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f156b0d4-a8cf-46af-bbd5-2b36f765eb2e",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b731d0fc-eadc-44a3-9355-a72cb095a51c",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse Movement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

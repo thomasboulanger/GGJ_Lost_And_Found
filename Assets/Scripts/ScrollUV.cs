@@ -9,8 +9,6 @@ public class ScrollUV : MonoBehaviour
     [SerializeField]
     private float bgSpeed = 0.0001f;
 
-    
-
     private void Start()
     {
         playerActions = FindObjectOfType<PlayerActions>();

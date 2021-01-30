@@ -354,6 +354,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 117317696001888843, guid: acaae15641c11b64cae1acf9aa558ae4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fae4a63262d67c54fb94479aef5ddb86, type: 2}
+    - target: {fileID: 117317696139053334, guid: acaae15641c11b64cae1acf9aa558ae4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 85f7467871215bb408a09cd02d377022, type: 2}
+    - target: {fileID: 1694001686374060884, guid: acaae15641c11b64cae1acf9aa558ae4,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.24313727
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694001686374060884, guid: acaae15641c11b64cae1acf9aa558ae4,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.16862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694001686374060884, guid: acaae15641c11b64cae1acf9aa558ae4,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.30980393
+      objectReference: {fileID: 0}
     - target: {fileID: 1694001686374060887, guid: acaae15641c11b64cae1acf9aa558ae4,
         type: 3}
       propertyPath: m_Name
