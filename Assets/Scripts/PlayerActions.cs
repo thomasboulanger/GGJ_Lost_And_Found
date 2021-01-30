@@ -8,6 +8,7 @@ public class PlayerActions : MonoBehaviour
 
     StepsSystem stepsSystem;
 
+    [HideInInspector]
     public bool beacon_Input, ship_Input, escape_Input;
 
     Vector2 movementInput;
@@ -17,7 +18,8 @@ public class PlayerActions : MonoBehaviour
     [SerializeField]
     private float speed = 3f;
 
-    private float horizontal, vertical;
+    [HideInInspector]
+    public float horizontal, vertical;
 
     [SerializeField]
     private GameObject beacon;
@@ -75,6 +77,7 @@ public class PlayerActions : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(transform.rotation.x, 180f, transform.rotation.z);
         }
+
         BeaconManager();
     }
 
