@@ -31,11 +31,11 @@ public class MainMenu : MonoBehaviour
     }
     public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("MusicVolume", volume);
+        audioMixer.SetFloat("Music", volume);
     }
     public void SetFXVolume(float volume)
     {
-        audioMixer.SetFloat("FXVolume", volume);
+        audioMixer.SetFloat("FX", volume);
     }
     public void SetFullscreen(bool isFullscreen)
     {
