@@ -148,47 +148,47 @@ PrefabInstance:
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[0]
-      value: drg
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[1]
-      value: dr
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[2]
-      value: gd
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[3]
-      value: r
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[4]
-      value: d
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[5]
-      value: r
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[6]
-      value: db
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[7]
-      value: ebr
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[8]
-      value: '''t'
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6102190356122703286, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
