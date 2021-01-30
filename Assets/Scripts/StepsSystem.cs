@@ -14,11 +14,21 @@ public class StepsSystem : MonoBehaviour
     [SerializeField]
     private List<string> textStr = new List<string>();
 
+    [SerializeField]
+    private GameObject emergencyPod;
+
+    private void Start()
+    {
+        emergencyPod.SetActive(false);
+    }
 
     public int AddStep(int index)
     {
         if (index > nbSteps)
             return nbSteps;
+
+        if (GameObject.Find("GreenDot_" + (nbSteps - 2)).GetComponent<Image>().enabled == true)
+           emergencyPod.SetActive(true);
 
         if (index != nbSteps)
         {
@@ -27,15 +37,15 @@ public class StepsSystem : MonoBehaviour
         }
         else
         {
-            EmergencyPod();
+            EmergencyPodDetection();
         }
 
         return index;
     }
   
-    private void EmergencyPod()
+    private void EmergencyPodDetection()
     {
-        if (Vector2.Distance(transform.position, EndLevel.singleton.EmergencyPod.transform.position) <= 2f)
+        if (Vector2.Distance(transform.position, emergencyPod.transform.position) <= 2f)
         {
             GameObject.Find("GreenDot_" + nbSteps).GetComponent<Image>().enabled = true;
             EndLevel.singleton._win = true;
@@ -44,6 +54,9 @@ public class StepsSystem : MonoBehaviour
 
     public int RemoveStep(int index)
     {
+        if (GameObject.Find("GreenDot_" + (nbSteps)).GetComponent<Image>().enabled == false)
+            emergencyPod.SetActive(false);
+
         if (GameObject.Find("GreenDot_" + nbSteps).GetComponent<Image>().enabled == true)
         {
             GameObject.Find("GreenDot_" + nbSteps).GetComponent<Image>().enabled = false;

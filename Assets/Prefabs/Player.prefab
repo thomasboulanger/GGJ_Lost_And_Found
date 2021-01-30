@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beacon_Input: 0
-  ship_Input: 0
   escape_Input: 0
   speed: 3
   horizontal: 0
@@ -187,6 +186,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nbSteps: 10
+  textStr:
+  - sdfkjhqsh
+  - jksdh
+  - dshkjf
+  - jfdhks
+  - jkhdfs
+  - hkjsdf
+  - kjhdsf
+  - jkhsd
+  - finish
+  emergencyPod: {fileID: 0}
 --- !u!114 &2143457789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,5 +210,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 0}
-  EmergencyPod: {fileID: 0}
   _win: 0

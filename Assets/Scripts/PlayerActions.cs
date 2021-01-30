@@ -32,7 +32,6 @@ public class PlayerActions : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
-
     private bool isMoving = false;
 
     private void OnEnable()
@@ -67,8 +66,6 @@ public class PlayerActions : MonoBehaviour
         horizontal = movementInput.x;
         vertical = movementInput.y;
 
-        
-
         animator.SetFloat("horizontal", horizontal);
         animator.SetFloat("vertical", vertical);
         animator.SetBool("isMoving", isMoving);
@@ -81,8 +78,6 @@ public class PlayerActions : MonoBehaviour
         {
             isMoving = false;
         }
-
-        
 
         Rotation();
 

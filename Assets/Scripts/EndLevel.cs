@@ -7,12 +7,8 @@ public class EndLevel : MonoBehaviour
 {
     [SerializeField]
     private GameObject fadeScreen;
-    
-    public GameObject EmergencyPod;
-
 
     public static EndLevel singleton = null;
-
 
     public bool _win;
     private Color _tempColor;
