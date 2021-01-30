@@ -152,7 +152,7 @@ MonoBehaviour:
   speed: 3
   horizontal: 0
   vertical: 0
-  beacon: {fileID: 4282465908644777139, guid: f792acb7b8e98f948afdedcc2fbee11a, type: 3}
+  beacon: {fileID: 7088240323449249948, guid: bbc903c14d8be1c46862dbf70f1ddc99, type: 3}
   distanceBeacon: 2
   animator: {fileID: 965082455}
 --- !u!95 &965082455
