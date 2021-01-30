@@ -63,6 +63,7 @@ public class PlayerActions : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log(stepsSystem.nbSteps + " / " + beaconsList.Count);
         horizontal = movementInput.x;
         vertical = movementInput.y;
 
@@ -150,12 +151,16 @@ public class PlayerActions : MonoBehaviour
                 }
             }
 
-            if (beacon_Input && spawnableBeacon)
+            if (beacon_Input && spawnableBeacon && stepsSystem.nbSteps-1 != beaconsList.Count)
             {
                 beaconsList.Add(Instantiate(beacon, transform.position, Quaternion.identity));
 
                 index = stepsSystem.AddStep(index);
-            }   
+            }
+            else if (beacon_Input && stepsSystem.nbSteps-1 == beaconsList.Count)
+            {
+                index = stepsSystem.AddStep(index);
+            }
         }
         else if (beacon_Input)
         {

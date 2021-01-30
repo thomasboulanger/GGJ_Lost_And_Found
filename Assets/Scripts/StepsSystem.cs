@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class StepsSystem : MonoBehaviour
 {
@@ -15,12 +16,25 @@ public class StepsSystem : MonoBehaviour
         if (index > nbSteps)
             return nbSteps;
 
-        GameObject.Find("GreenDot_" + index).GetComponent<Image>().enabled = true;
-
         if (index != nbSteps)
+        {
+            GameObject.Find("GreenDot_" + index).GetComponent<Image>().enabled = true;
             GameObject.Find("TextGoal_" + ++index).GetComponent<TMP_Text>().text = "lala";
-
+        }
+        else
+        {
+            EmergencyPod();
+        }
         return index;
+    }
+
+    private void EmergencyPod()
+    {
+        if (Vector2.Distance(transform.position, EndLevel.singleton.EmergencyPod.transform.position) <= 2f)
+        {
+            GameObject.Find("GreenDot_" + nbSteps).GetComponent<Image>().enabled = true;
+            EndLevel.singleton._win = true;
+        }
     }
 
     public int RemoveStep(int index)

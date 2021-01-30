@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1207181786}
   - component: {fileID: 965082455}
   - component: {fileID: 1921178725071478988}
+  - component: {fileID: 2143457789}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -149,8 +150,10 @@ MonoBehaviour:
   ship_Input: 0
   escape_Input: 0
   speed: 3
+  horizontal: 0
+  vertical: 0
   beacon: {fileID: 4282465908644777139, guid: f792acb7b8e98f948afdedcc2fbee11a, type: 3}
-  distanceBeacon: 5
+  distanceBeacon: 2
   animator: {fileID: 965082455}
 --- !u!95 &965082455
 Animator:
@@ -184,3 +187,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nbSteps: 10
+--- !u!114 &2143457789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6102190356122703293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4db25f426fba0f4e9f999e34276ea84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeScreen: {fileID: 0}
+  EmergencyPod: {fileID: 0}
+  _win: 0
