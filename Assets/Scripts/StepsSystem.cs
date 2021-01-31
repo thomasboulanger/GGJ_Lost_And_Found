@@ -7,6 +7,8 @@ using System;
 
 public class StepsSystem : MonoBehaviour
 {
+    DetectStep detectStep;
+
     public int nbSteps = 10;
 
     private static string hiddenText = "???";
@@ -19,6 +21,8 @@ public class StepsSystem : MonoBehaviour
 
     private void Start()
     {
+        detectStep = GetComponent<DetectStep>();
+
         emergencyPod.SetActive(false);
     }
 
@@ -27,7 +31,8 @@ public class StepsSystem : MonoBehaviour
         if (index > nbSteps)
             return nbSteps;
 
-        if (GameObject.Find("GreenDot_" + (nbSteps - 2)).GetComponent<Image>().enabled == true)
+        if (GameObject.Find("GreenDot_" + (nbSteps - 2)).GetComponent<Image>().enabled == true
+            && detectStep.CheckDistance() == true)
            emergencyPod.SetActive(true);
 
         if (index != nbSteps)
@@ -54,6 +59,8 @@ public class StepsSystem : MonoBehaviour
 
     public int RemoveStep(int index)
     {
+        detectStep.canEscape = true;
+
         if (GameObject.Find("GreenDot_" + (nbSteps)).GetComponent<Image>().enabled == false)
             emergencyPod.SetActive(false);
 

@@ -27,7 +27,8 @@ public class PlayerActions : MonoBehaviour
     [SerializeField]
     private float distanceBeacon = 5f;
 
-    List<GameObject> beaconsList = new List<GameObject>();
+    [HideInInspector]
+    public List<GameObject> beaconsList = new List<GameObject>();
 
     [SerializeField]
     private Animator animator;
