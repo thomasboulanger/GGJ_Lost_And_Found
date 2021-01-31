@@ -187,15 +187,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nbSteps: 10
   textStr:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-  - 7
-  - 8
-  - 9
+  - bottom left till ship part
+  - 2 sec bottom
+  - right till the second asteroid
+  - top till asteroid
+  - 5 sec right
+  - 3 sec right
+  - bottom till the ship part
+  - left till the ship part
+  - top left to pod
   emergencyPod: {fileID: 0}
 --- !u!114 &2143457789
 MonoBehaviour:
