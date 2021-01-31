@@ -14,7 +14,7 @@ DETAILS TECHNIQUES :	//
 -Style graphique a definir mais surrement pixel		OK
 -Son de freesound ou a crée entre nous			OK
 -Police d ecriture a définir				OK
--Backgrounds des différents menu 			XX
+-Backgrounds des différents menu 			OK
 
 
 //////////////////////////
@@ -48,7 +48,7 @@ SCRPITS
 -PLAYER CONTROLLER				OK
 -CAMERA CONTROLLER				OK
 -BALISE SCRIPT ET VALIDER ETAPES 		OK
--OBJECTIFS (LIST)				XX
+-OBJECTIFS (LIST)				OK/
 -MAIN MENU					OK
 -OPTION MENU					OK
 -PAUSE MENU					OK
@@ -62,7 +62,7 @@ PROPS
 -ETOILES 					OK
 -GALAXIES					OK
 -ASTEROIDES					OK
--MORCEAUX DE VAISSEAU (PETIT/MOYEN/GRAND    ET PLUSIEURS DE CHAQUES)		XX
+-MORCEAUX DE VAISSEAU (PETIT/MOYEN/GRAND    ET PLUSIEURS DE CHAQUES)		OK
 -DES PROPS RANDOMS (PELLE CANARD ETC..)						XX
 -ET PLUS FAITES VOUS PLAISIR, NOUS ON SAIS PAS INVENTER A PART LES MATH :v	XXon est seul :cXX
 
