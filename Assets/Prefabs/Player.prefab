@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 965082455}
   - component: {fileID: 1921178725071478988}
   - component: {fileID: 2143457789}
+  - component: {fileID: 3774846879527284096}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -153,6 +154,7 @@ MonoBehaviour:
   vertical: 0
   beacon: {fileID: 7088240323449249948, guid: bbc903c14d8be1c46862dbf70f1ddc99, type: 3}
   distanceBeacon: 2
+  beaconsList: []
   animator: {fileID: 965082455}
 --- !u!95 &965082455
 Animator:
@@ -211,3 +213,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 0}
   _win: 0
+--- !u!114 &3774846879527284096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6102190356122703293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d314f9d9f1ae81d4e8bc4ffc6e23d597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepsObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  distObj: 5
+  canEscape: 0

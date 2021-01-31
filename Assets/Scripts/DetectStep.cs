@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DetectStep : MonoBehaviour
 {
@@ -31,14 +32,6 @@ public class DetectStep : MonoBehaviour
 
     public bool CheckDistance()
     {
-        /*if(playerActions.beaconsList.Count == 1)
-        {
-            if (Vector2.Distance(stepsObjects[0].transform.position, playerActions.beaconsList[0].transform.position) > distObj)
-            {
-                canEscape = false;
-            }
-        }*/
-
         if(playerActions.beaconsList.Count != 0)
         {
             for (int i = playerActions.beaconsList.Count; i < stepsSystem.nbSteps; i++)
@@ -48,6 +41,11 @@ public class DetectStep : MonoBehaviour
                     if (Vector2.Distance(stepsObjects[i - 1].transform.position, playerActions.beaconsList[i - 1].transform.position) > distObj)
                     {
                         canEscape = false;
+
+                        if (canEscape == false)
+                        {
+                            GameObject.Find("GreenDot_" + i).GetComponent<Image>().enabled = false;
+                        }
                     }
                 }
             }
