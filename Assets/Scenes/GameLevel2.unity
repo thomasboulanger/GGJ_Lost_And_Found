@@ -623,47 +623,47 @@ PrefabInstance:
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[0]
-      value: 1
+      value: UP RIGHT TILL SHIP CEMETERY
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[1]
-      value: 2
+      value: RIGHT TO ASTEROIDES
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[2]
-      value: 3
+      value: BOTTOM RIGHT TO ASTEROIDE
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[3]
-      value: 4
+      value: BOTTOM TO SHIP PART
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[4]
-      value: 5
+      value: 3 SEC LEFT
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[5]
-      value: 6
+      value: BOTTOM LEFT TILL SHIP PART AND ASTEROID
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[6]
-      value: 7
+      value: BOTTOM RIGHT TO ASTEROIDE
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[7]
-      value: 8
+      value: TOP RIGHT TO SHIP PART
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
       propertyPath: textStr.Array.data[8]
-      value: -- to pod
+      value: RIGHT TO POD
       objectReference: {fileID: 0}
     - target: {fileID: 1921178725071478988, guid: 7208a101d9095ce4f8626ed330d5ded9,
         type: 3}
@@ -2525,6 +2525,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628800074670303470, guid: 6830e01d1ddac4a40b84990e3c57bcab,
+        type: 3}
+      propertyPath: m_text
+      value: 5 SEC UP
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628800074670303470, guid: 6830e01d1ddac4a40b84990e3c57bcab,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 32.4
       objectReference: {fileID: 0}
     - target: {fileID: 4628800074880568142, guid: 6830e01d1ddac4a40b84990e3c57bcab,
         type: 3}
